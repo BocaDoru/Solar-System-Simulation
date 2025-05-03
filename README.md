@@ -54,15 +54,19 @@
 ### Physics Engine
 
 * All physics equation are based on Newton's law of universal gravitation.
- * $$F = G \frac{m_1 m_2}{r^2}$$
- * $$F->$$ gravitational atraction force between 2 objects.
- * $$G->$$ gravitational constant that equals to $$~6.67428^-11$$.
- * $$m_1, m_2->$$ the mass of those 2 objects.
- * $$r->$$ the distance between those 2 objects.
-  * $$r = 1AU \frac{c_1-c_2}{s}$$
-    * What integration method did you use (e.g., Euler, Verlet)?
-    * How did you handle time steps and accuracy?
-    * Did you implement any optimizations?
+  * $$F = G \frac{m_1 m_2}{r^2}$$
+  * $$F->$$ gravitational atraction force between 2 objects.
+  * $$G->$$ gravitational constant that equals to $$~6.67428^-11$$.
+  * $$m_1, m_2->$$ the mass of those 2 objects.
+  * $$r->$$ the distance between those 2 objects.
+    * $$r = 1AU \frac{c_1 - c_2}{s}$$
+    * $$1AU~1.49597^11$$ 1AU=the distance between Sun and Earth.
+    * $$c_1, c_2->$$ the center of each celestial object in Unity wolrd coordinates.
+    * $$s->$$ the scale selected in Settings Menu.
+* All the calculation are done for each *Fixed Update*(0.02s).
+* After gravitational atraction force is calculated the acceleration is recalculated as $$a = \frac{F}{m}$$.
+* The velocity is calculated as $$ v = v_0 + a t t_m$$. Where $$v_0$$ is the iniatial velocity for each celestial body, $$t=0.02s$$ and $$t_m$$ is the **time multiplier** selected in the Settings Menu.
+* The position is calculated as $$ p = p_0 + \frac{t t_m v s}{1 AU}.
 
 ### Procedural Generation
 
