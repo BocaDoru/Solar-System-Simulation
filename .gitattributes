@@ -1,0 +1,7 @@
+*dylib filter=lfs diff=lfs merge=lfs -text
+*so filter=lfs diff=lfs merge=lfs -text
+*bc filter=lfs diff=lfs merge=lfs -text
+.*unity filter=lfs diff=lfs merge=lfs -text
+*.unity filter=lfs diff=lfs merge=lfs -text
+SolarSystem-executable/SolarSystem_Data/level1 filter=lfs diff=lfs merge=lfs -text
+SolarSystem-executable/SolarSystem_Data/* filter=lfs diff=lfs merge=lfs -text

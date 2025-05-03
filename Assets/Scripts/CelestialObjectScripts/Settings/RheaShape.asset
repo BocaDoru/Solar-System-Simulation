@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68fbf3eb7efbed4e8ebebe7ffcd2b2f, type: 3}
+  m_Name: RheaShape
+  m_EditorClassIdentifier: 
+  planetRadius: 0.12449999
+  noiseLayers:
+  - enable: 1
+    useFirstLayerAsMask: 0
+    noiseSettings:
+      filterType: 0
+      simpleNoiseSettings:
+        strenght: 0.015
+        numLayers: 6
+        baseRoughness: 0.5
+        roughness: 2
+        persistence: 0.4
+        center: {x: 2.5, y: 0, z: 0}
+        minValue: 0.6
+      ridgidNoiseSettings:
+        strenght: 0
+        numLayers: 0
+        baseRoughness: 0
+        roughness: 0
+        persistence: 0
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0
+  - enable: 1
+    useFirstLayerAsMask: 0
+    noiseSettings:
+      filterType: 0
+      simpleNoiseSettings:
+        strenght: 0.003
+        numLayers: 3
+        baseRoughness: 5
+        roughness: 2
+        persistence: 1.5
+        center: {x: 0, y: 2.25, z: 0}
+        minValue: 3.3
+      ridgidNoiseSettings:
+        strenght: 0.12
+        numLayers: 5
+        baseRoughness: 1
+        roughness: 5
+        persistence: 0.5
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0.5
+        weightMultiplier: 0.2
+  - enable: 1
+    useFirstLayerAsMask: 1
+    noiseSettings:
+      filterType: 1
+      simpleNoiseSettings:
+        strenght: 0.003
+        numLayers: 3
+        baseRoughness: 5
+        roughness: 2
+        persistence: 1.5
+        center: {x: 0, y: 2.25, z: 0}
+        minValue: 3.3
+      ridgidNoiseSettings:
+        strenght: 6
+        numLayers: 5
+        baseRoughness: 1
+        roughness: 3
+        persistence: 0.4
+        center: {x: 0, y: 0, z: 0}
+        minValue: 0.5
+        weightMultiplier: 20

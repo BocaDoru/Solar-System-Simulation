@@ -1,0 +1,8 @@
+Day/Second	Scale	ShowMoons
+7		10	activ
+10		10	activ
+14		10	inactiv
+15		10	inactiv
+6		20/30	activ
+9		20/30	activ
+13		20/30	inactiv		
