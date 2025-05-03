@@ -65,8 +65,8 @@
     * $$s->$$ the scale selected in Settings Menu.
 * All the calculation are done for each *Fixed Update*(0.02s).
 * After gravitational atraction force is calculated the acceleration is recalculated as $$a = \frac{F}{m}$$.
-* The velocity is calculated as $$ v = v_0 + a t t_m$$. Where $$v_0$$ is the iniatial velocity for each celestial body, $$t=0.02s$$ and $$t_m$$ is the **time multiplier** selected in the Settings Menu.
-* The position is calculated as $$ p = p_0 + \frac{t t_m v s}{1 AU}.
+* The velocity is calculated as $$v = v_0 + a * t * t_m$$. Where $$v_0$$ is the iniatial velocity for each celestial body, $$t=0.02s$$ and $$t_m$$ is the **time multiplier** selected in the Settings Menu.
+* The position is calculated as $$p = p_0 + \frac{t * t_m * v * s}{1 AU}.
 
 ### Procedural Generation
 
