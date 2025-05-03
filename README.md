@@ -54,7 +54,12 @@
 ### Physics Engine
 
 * All physics equation are based on Newton's law of universal gravitation.
-        $$F = G \frac{m_1 m_2}{r^2}$$
+ * $$F = G \frac{m_1 m_2}{r^2}$$
+ * $$F->$$ gravitational atraction force between 2 objects.
+ * $$G->$$ gravitational constant that equals to $$~6.67428^-11$$.
+ * $$m_1, m_2->$$ the mass of those 2 objects.
+ * $$r->$$ the distance between those 2 objects.
+  * $$r = 1AU frac{c_1-c_2 s}$$
     * What integration method did you use (e.g., Euler, Verlet)?
     * How did you handle time steps and accuracy?
     * Did you implement any optimizations?
