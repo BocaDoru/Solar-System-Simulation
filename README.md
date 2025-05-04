@@ -11,7 +11,10 @@
 * [Technical Details](#technical-details)
   * [Physics Engine](#physics-engine)
   * [Procedural Generation](#procedural-generation)
+    * [Shape Generator](#shape-generator)
+    * [Color Generator](#color-generator)
   * [Data Handling](#data-handling)
+* [Project Structure](#project-structure)
 
 ## Technologies Used
 
@@ -51,8 +54,6 @@
 
 ## Technical Details
 
-
-
 ### Physics Engine
 
 * All physic equations are based on Newton's law of universal gravitation.
@@ -81,7 +82,7 @@
   * **Shape Settings:** a *Scriptable Object* used to store noise settings for each celestial body.
   * **Colour Settings:** a *Scriptable Object* used to store color settings for each celestial body.
 
-## Shape Generator
+#### Shape Generator
 
 * It's done using multiple **noise filter layers** stacked one on top to another using the first layer as mask or as individual noise layers.
 * There are 2 types of noises used:
@@ -92,13 +93,62 @@
   * **Strenght:** a multiplier for the noise layer.
   * **Num Layers:** the number of sub-layers.
   * **Base Roughness:** the frequency used for the first sub-layer.
-  * **Roughness:** a multiplier used for each sub-layer after the first one. It is used as: $$freq=BaseRoughness*Roughness^i, where i is the sub-layer number$$.
-  * **Persistence:** the amplitude of each sub-layer. It is used as: $$A=1, for the first sub-layer; A_i=A_{i-1}*persistence, where i is the sub-layer number$$
-  * **Center:**
-  * **Min Value**
-  * **Weight Multiplier(Only for Ridgid Noise):**
+  * **Roughness:** a multiplier used for each sub-layer after the first one. It is used as: $$freq=BaseRoughness*Roughness^i$$ where i is the sub-layer number.
+  * **Persistence:** the amplitude of each sub-layer. It is used as: $$A=1$$ for the first sub-layer, $$A_i=A_{i-1}*persistence$$ where i is the sub-layer number.
+  * **Center:** this is the center of noise
+  * **Min Value:** the minimum value for the noise
+  * **Weight Multiplier(Only for Ridgid Noise):** the weight of each sub-layer. It is used as: $$w=1$$ for the first sub-layer, $$w_i=w_{i-1}*WeightMultiplier$$ where i is the sub-layer number.
+* This generation can create complex visual representation for each celestial body. In this simulation I optate to a realistic representation for each Solar System celestial body using reference imagines.
+
+#### Color Generator
+
+* It's done using a **biome distribution** method and a **noise layer** for a natural aspect.
+* Each celestial body can have multiple biomes along the latitude lines.
+* Each biome has a **gradient color** used to difference between altitudes.
+* The **ocean colour** is a gradient used for oceans or celestial body minimum altitude color.  
 
 ### Data Handling
 
-* How did you store and manage data about celestial bodies (e.g., position, velocity, mass)?
-* Did you use any specific data structures?
+* All the planetary data are provided by [Nasa Horisons](#https://ssd.jpl.nasa.gov/horizons/) and are colected at the date **18.11.2023**. Those data can be found in **SolarSystemData.xlsx** file in this repository.
+* All the reference imagines are provided by [Wikipedia Solar System page](#https://en.wikipedia.org/wiki/Solar_System) and links to each celestial body from our Solar System.
+* In **Rezultate optime.txt** file you can find the optimal settings for long time simulation.
+
+## Project Structure
+
+* **CelestialObjectScripts:**
+  * **PlanetScript:**
+    * `Planet.cs`: Handles celestial bodies generation based on the editor parameters.
+    * `TerrainFace.cs`: Handles faces generation.
+    * `INoiseFilter.cs`: Noise interface.
+    * `Noise.cs`: Simplex Perlin Noise algorithm.
+    * `NoiseSettings.cs`: Handles noise settings for generation.
+    * `NoiseFilterFactory.cs`: Selects one of the 2 noise filters.
+    * `SimpleNoiseFilter.cs`: Handles *Simplex Noise* generation for multiple layers.
+    * `RidgidNoiseFilter.cs`: Handles *Ridgid Noise* generation for multiple layers.
+    * `ShapeSettings.cs`: ScriptableObject used to store celestial body shapes.
+    * `ShapeGenerator.cs`: Handles celestial body shape generation.
+    * `ColourSettings.cs`: ScriptableObject used to store celestial body colour.
+    * `ColourGenerator.cs`: Handles celestial body colour generation.
+  * **Editor:**
+    * `PlanetEditor.cs`: Costom Unity editor for planets generation.
+  * **Settings:** Contains the ShapeSettings, ColouSettings and Material for each celestial body.
+* **InputManager:**
+  * `BackButton.cs`: Handles *back* and *exit* action.
+  * `FullScreenMode.cs`: Toggles fullscreen mode.
+  * `Generator.cs`: Generate Selection Menu.
+  * `SelectMenuInput.cs`: Handles Selection Menu hot keys.
+  * `ObserverSelector.cs`: Toggles observer selection.
+  * `TargetSelector.cs`: Toggles target selection.
+  * `SwitchCamera.cs`: Handles switch camera events and simulation parameters changes for better visualization.
+* **Settings:**
+  * `PlayButton.cs`: Starts the simulation.
+  * `Scale.cs`: Handles scale input.
+  * `ShowInfoText.cs`: Toggles infos mode for simulation parameters.
+  * `ShowMoons.cs`: Toggles *Show Moons* mode.
+  * `ShowOrbit.cs`: Toggles *Show Orbit* mode.
+  * `TimeMultiplier.cs`: Handles time multiplier input.
+* **SolarSystem:**
+  * `CelestialObject.cs`: Handles celestial objects physics.
+  * `DayCounter.cs`: Handles time updates.
+  * `Gravity.cs`: Handles gravitational atraction aceleration for each celestial body.
+  * `Initialize.cs`: Handels simulation parameters initialization.
