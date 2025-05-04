@@ -1,10 +1,11 @@
 # Solar System Simulation
 
-* This Unity project simulates the dynamics of a solar system, allowing users to \[briefly describe the main purpose, e.g., visualize planetary motion, experiment with gravitational forces, etc.]. It incorporates \[mention key features, e.g., realistic physics, procedural generation, etc.] to create a dynamic and interactive simulation.
+* This Unity project provides an interactive simulation of a solar system, allowing users to explore planetary motion, observe gravitational forces, and visualize orbital mechanics. It features procedural planet generation and a user-friendly interface for controlling simulation parameters.
 
 ## Table of Contents
 
 * [Technologies Used](#technologies-used)
+* [Running the Application](#running-the-application)
 * [Features](#features)
 * [Usage](#usage)
   * [Simulation Controls](#simulation-controls)
@@ -20,6 +21,10 @@
 
 * Unity
 * C#
+
+## Running the Application
+
+* Clone this repository using `git clone https://github.com/BocaDoru/Solar-System-Simulation.git` and run **SolarSystem.exe** from *SolarSystem-executable* directory.
 
 ## Features
 
