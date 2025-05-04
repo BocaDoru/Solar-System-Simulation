@@ -92,8 +92,8 @@
   * **Strenght:** a multiplier for the noise layer.
   * **Num Layers:** the number of sub-layers.
   * **Base Roughness:** the frequency used for the first sub-layer.
-  * **Roughness:** a multiplier used for each sub-layer after the first one. It is used as: $$freq=BaseRoughness Roughness^i, where i is the sub-layer number$$.
-  * **Persistence:** the amplitude of each sub-layer. It is used as: $$A=1, for the first sub-layer; A_i=A_(i-1)*persistence, where i is the sub-layer number$$
+  * **Roughness:** a multiplier used for each sub-layer after the first one. It is used as: $$freq=BaseRoughness*Roughness^i, where i is the sub-layer number$$.
+  * **Persistence:** the amplitude of each sub-layer. It is used as: $$A=1, for the first sub-layer; A_i=A_{i-1}*persistence, where i is the sub-layer number$$
   * **Center:**
   * **Min Value**
   * **Weight Multiplier(Only for Ridgid Noise):**
