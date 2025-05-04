@@ -35,7 +35,7 @@
 
 * **Set your simulation parameters:**
   * **Days/Second:** this setting controls the simulation speed.
-  * **Scale:** this setting controls the scale for an *Astronomical Unit* in Unity wolrd coordinates(e.g. 1 AU=10 Unity units)
+  * **Scale:** this setting controls the scale for an *Astronomical Unit* in Unity world coordinates(e.g. 1 AU=10 Unity units)
   * **Show moons:** this settings controls whether or not the moons should be visible in the simulation.
   * **Show orbit:** this settings controls whether or not the planetary orbit should be visible in the simulation.
 
@@ -64,7 +64,7 @@
   * $$r->$$ the distance between those 2 objects.
     * $$r = 1AU \frac{c_1 - c_2}{s}$$
     * $$1AU~1.49597^{11}$$ 1AU=the distance between Sun and Earth.
-    * $$c_1, c_2->$$ the center of each celestial object in Unity wolrd coordinates.
+    * $$c_1, c_2->$$ the center of each celestial object in Unity world coordinates.
     * $$s->$$ the scale selected in Settings Menu.
 * All the calculation are done for each **Fixed Update(0.02s)**.
 * After gravitational atraction force is calculated the acceleration is recalculated as $$a = \frac{F}{m}$$.
@@ -109,7 +109,7 @@
 
 ### Data Handling
 
-* All the planetary data are provided by [Nasa Horisons](#https://ssd.jpl.nasa.gov/horizons/) and are colected at the date **18.11.2023**. Those data can be found in **SolarSystemData.xlsx** file in this repository.
+* All the planetary data are provided by [Nasa Horisons](#https://ssd.jpl.nasa.gov/horizons/) and are collected at the date **18.11.2023**. Those data can be found in **SolarSystemData.xlsx** file in this repository.
 * All the reference imagines are provided by [Wikipedia Solar System page](#https://en.wikipedia.org/wiki/Solar_System) and links to each celestial body from our Solar System.
 * In **Rezultate optime.txt** file you can find the optimal settings for long time simulation.
 
@@ -130,7 +130,7 @@
     * `ColourSettings.cs`: ScriptableObject used to store celestial body colour.
     * `ColourGenerator.cs`: Handles celestial body colour generation.
   * **Editor:**
-    * `PlanetEditor.cs`: Costom Unity editor for planets generation.
+    * `PlanetEditor.cs`: Custom Unity editor for planets generation.
   * **Settings:** Contains the ShapeSettings, ColouSettings and Material for each celestial body.
 * **InputManager:**
   * `BackButton.cs`: Handles *back* and *exit* action.
@@ -151,4 +151,4 @@
   * `CelestialObject.cs`: Handles celestial objects physics.
   * `DayCounter.cs`: Handles time updates.
   * `Gravity.cs`: Handles gravitational atraction aceleration for each celestial body.
-  * `Initialize.cs`: Handels simulation parameters initialization.
+  * `Initialize.cs`: Handles simulation parameters initialization.
