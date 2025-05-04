@@ -59,11 +59,11 @@
 * All physic equations are based on Newton's law of universal gravitation.
   * $$F = G \frac{m_1 m_2}{r^2}$$
   * $$F->$$ gravitational atraction force between 2 objects.
-  * $$G->$$ gravitational constant that equals to $$~6.67428^-11$$.
+  * $$G->$$ gravitational constant that equals to $$~6.67428^{-11}$$.
   * $$m_1, m_2->$$ the mass of those 2 objects.
   * $$r->$$ the distance between those 2 objects.
     * $$r = 1AU \frac{c_1 - c_2}{s}$$
-    * $$1AU~1.49597^11$$ 1AU=the distance between Sun and Earth.
+    * $$1AU~1.49597^{11}$$ 1AU=the distance between Sun and Earth.
     * $$c_1, c_2->$$ the center of each celestial object in Unity wolrd coordinates.
     * $$s->$$ the scale selected in Settings Menu.
 * All the calculation are done for each **Fixed Update(0.02s)**.
